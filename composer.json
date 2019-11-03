@@ -1,0 +1,22 @@
+{
+    "name": "mapkyca/known-graphql",
+    "description": "Graph QL support for Known",
+    "type": "known-plugin",
+    "version": "0.0.1",
+    "require": {
+        "webonyx/graphql-php": "^0.13.8",
+        "composer/installers": "^1.7"
+    },
+    "authors": [
+        {
+            "name": "Marcus Povey",
+            "email": "marcus@marcus-povey.co.uk"
+        }
+    ],
+    "require-dev": {
+        "mapkyca/known-dev-scripts": "^1.3"
+    },
+    "extra": {
+        "installer-name": "GraphQL"
+    }
+}

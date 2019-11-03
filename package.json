@@ -1,0 +1,8 @@
+{
+  "name": "GraphQL",
+  "version": "0.0.1",
+  "description": "Graph QL support for Known",
+  "devDependencies": {
+    "grunt": "^1.0.3"
+  }
+}
