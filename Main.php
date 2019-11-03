@@ -7,7 +7,7 @@ namespace IdnoPlugins\GraphQL {
 
         function registerPages()
         {
-	    \Idno\Core\Idno::site()->routes()->addRoute('graphql', '\IdnoPlugins\GraphQL\Endpoint');
+	    \Idno\Core\Idno::site()->routes()->addRoute('graphql', '\IdnoPlugins\GraphQL\Pages\Endpoint');
         }
 
         function registerTranslations()
