@@ -71,6 +71,8 @@ namespace IdnoPlugins\GraphQL\Pages {
             \Idno\Core\Idno::site()->session()->publicGatekeeper();
 
             \Idno\Core\Idno::site()->template()->autodetectTemplateType();
+            
+            $this->parseJSONPayload();
 
             $arguments = func_get_args();
             if (!empty($arguments)) $this->arguments = $arguments;
