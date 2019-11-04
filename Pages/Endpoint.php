@@ -48,11 +48,20 @@ namespace IdnoPlugins\GraphQL\Pages {
 		    'mutation' => $mutationType,
 		]);
 		
-		$rawInput = file_get_contents('php://input');
+		/*$rawInput = file_get_contents('php://input');
 		$input = json_decode($rawInput, true);
 		$query = $input['query'];
 		$variableValues = isset($input['variables']) ? $input['variables'] : null;
 		$rootValue = ['prefix' => 'You said: '];
+		$result = GraphQL::executeQuery($schema, $query, $rootValue, null, $variableValues);
+		$output = $result->toArray();*/
+                
+                
+		$query = $this->getInput('query');
+		$variableValues = $this->getInput('variables');
+                
+		$rootValue = ['prefix' => 'You said: '];
+                
 		$result = GraphQL::executeQuery($schema, $query, $rootValue, null, $variableValues);
 		$output = $result->toArray();
 	    } catch (\Exception $e) {
@@ -62,7 +71,9 @@ namespace IdnoPlugins\GraphQL\Pages {
 		    ]
 		];
 	    }
+            
 	    header('Content-Type: application/json; charset=UTF-8');
+            
 	    echo json_encode($output, JSON_PRETTY_PRINT);
 	}
 
